@@ -118,6 +118,17 @@ namespace SharpFile
             return ret;
         }
 
+        public List<String> ReadToList()
+        {
+            List<String> ret = new List<String>();
+            String[] arr = ReadToArray();
+
+            for (int i = 0; i < arr.Length; i++)
+                ret.Add(arr[i]);
+
+            return ret;
+        }
+
         public int GetLinesCount()
         {
             using (StreamReader sr = new StreamReader(fName))
